@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="irGoogle">Go to Google</string>
+    <string name="irAlarma">Crear Alarma</string>
+    <string name="irTelefono">Llamar</string>
+    <string name="irActivity2">Go to Activity2</string>
+
+
+</resources>
