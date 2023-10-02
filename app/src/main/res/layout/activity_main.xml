@@ -46,6 +46,22 @@
 
         </Button>
 
+        <Button
+            android:text="@string/irTemporizador"
+            android:id="@+id/temporizador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Button>
+
+        <Button
+            android:text="@string/irFacebook"
+            android:id="@+id/facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Button>
+
     </LinearLayout>
 
 

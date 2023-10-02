@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button google, alarma, llamada;
+    Button google, alarma, llamada, temporizador, facebook;
 
 
     @Override
@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         google = findViewById(R.id.google);
         alarma = findViewById(R.id.alarma);
         llamada = findViewById(R.id.llamar);
+        temporizador = findViewById(R.id.temporizador);
+        facebook = findViewById(R.id.facebook);
 
         google.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,32 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        temporizador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent temporizador = new Intent(AlarmClock.ACTION_SET_TIMER)
+                        .putExtra(AlarmClock.EXTRA_MESSAGE, "message")
+                        .putExtra(AlarmClock.EXTRA_LENGTH, 30)
+                        .putExtra(AlarmClock.EXTRA_SKIP_UI, true);
+                if (temporizador.resolveActivity(getPackageManager()) != null) {
+                    startActivity(temporizador);
+                }
+
+            }
+        });
+
+
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent facebook = new Intent(Intent.ACTION_VIEW);
+                facebook.setData(Uri.parse("http://www.facebook.com"));
+                startActivity(facebook);
+
+            }
+        });
     }
 
     public void crearAlarma() {
@@ -72,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(llamada);
         }
     }
+
+
 }
 
 
