@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button google, alarma, llamada, temporizador, facebook;
+    Button google, alarma, llamada, temporizador, correo;
 
 
     @Override
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         alarma = findViewById(R.id.alarma);
         llamada = findViewById(R.id.llamar);
         temporizador = findViewById(R.id.temporizador);
-        facebook = findViewById(R.id.facebook);
+        correo = findViewById(R.id.correo);
 
         google.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,13 +69,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        facebook.setOnClickListener(new View.OnClickListener() {
+        correo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent facebook = new Intent(Intent.ACTION_VIEW);
-                facebook.setData(Uri.parse("http://www.facebook.com"));
-                startActivity(facebook);
 
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("*/*");
+                intent.putExtra(Intent.EXTRA_EMAIL, "juaneroskate9@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Bienvenido a su nuevo empleo");
+                intent.putExtra(Intent.EXTRA_STREAM, "Te damos la bienvenida a Android Corp, eres un nuevo integrante de la familia te felicitamos");
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -102,7 +107,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
 }
+
+
+
 
 
 

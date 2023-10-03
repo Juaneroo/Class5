@@ -24,6 +24,10 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.SET_TIMER" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.MAIN" />
